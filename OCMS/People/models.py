@@ -11,12 +11,18 @@ class Student(models.Model):
 	username = models.CharField('Login Username', max_length = 25)
 	password = models.CharField('Login Password', max_length = 20)
 
+	def __str__(self):
+		return str(self.firstName+' '+self.lastName)
+
 class Faculty(models.Model):
 	facultyID = models.AutoField(primary_key = True)
 	firstName = models.CharField('First Name', max_length = 100)
 	lastName = models.CharField('Last Name', max_length = 100)
 	username = models.CharField('Login Username', max_length = 25)
 	password = models.CharField('Login Password', max_length = 20)
+
+	def __str__(self):
+		return str(self.firstName+' '+self.lastName)
 
 class Parent(models.Model):
 	parentID = models.AutoField(primary_key = True)
@@ -25,12 +31,18 @@ class Parent(models.Model):
 	username = models.CharField('Login Username', max_length = 25)
 	password = models.CharField('Login Password', max_length = 20)
 
+	def __str__(self):
+		return str(self.firstName+' '+self.lastName)
+
 class Admin(models.Model):
 	adminID = models.AutoField(primary_key = True)
 	firstName = models.CharField('First Name', max_length = 100)
 	lastName = models.CharField('Last Name', max_length = 100)
 	username = models.CharField('Login Username', max_length = 25)
 	password = models.CharField('Login Password', max_length = 20)
+
+	def __str__(self):
+		return str(self.firstName+' '+self.lastName)
 
 class ParentOf(models.Model):
 	studentID = models.ForeignKey(Student, on_delete = models.CASCADE)
