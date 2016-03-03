@@ -5,3 +5,4 @@ from People.admin import facultySite
 # Register your models here.
 
 facultySite.register(Course)
+

@@ -29,6 +29,7 @@ class Lecture(models.Model):
 	lectureID = models.AutoField(primary_key = True)
 	lectureTitle = models.CharField('Title', max_length = 50)
 	lectureText = models.CharField('Lecture', max_length = 500)
+	lectureWeek = models.IntegerField('Week No.')
 
 class CourseContent(models.Model):
 	courseID = models.ForeignKey(Course)
