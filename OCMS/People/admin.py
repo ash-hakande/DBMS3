@@ -9,5 +9,8 @@ class StudentSite(admin.AdminSite):
 class FacultySite(admin.AdminSite):
 	site_header = 'Welcome Faculty!'
 
+studentSite = StudentSite(name = 'student site')
+facultySite = FacultySite(name = 'faculty site')
+
 admin.site.register(Faculty)
 
