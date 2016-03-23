@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles%}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Faculty Landing Page</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/simple-sidebar.css' %}" rel="stylesheet">
+
+    <style>
+    textarea {
+        min-height= 400px;
+    }
+    </style>
+</head>
+
+<body>
+    <center>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#">    </a>
+                </li>
+                <li>
+                    <a href="#">View/Edit Course</a>
+                </li>
+                <li>
+                    <a href="#">Email</a>
+                </li>
+                <li>
+                    <a href="#">Account Settings</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Sidebar</a>
+
+                        <!--Page content-->
+
+                        <h2>TEST </h2><!--get from views-->
+                        <form action="action_page_url" method="post">
+                        {% csrf_token %}
+                          <!-- Assignment ID: -->
+                        	<br>
+<!--                         	<input type="text" value="default" name="id">
+
+ -->                        	
+                        	<!-- <br>
+                        	<textarea name="text" rows="30" cols="100">
+                        	Enter the assignment text here...
+                        	</textarea>
+ -->
+                            <div class="form-group">
+                              <label for="comment">Question 1:</label>
+                              <input type="text" class="form-control" id="q1" name="question1">
+                              <br>
+                              <div class="form-group">
+                                <label for="usr">(a)</label>
+                                <input type="text" class="form-control" id="q1-o1" name="question1option1">
+                              </div>
+                              <div class="form-group">
+                                <label for="usr">(b)</label>
+                                <input type="text" class="form-control" id="q1-o2" name="question1option2">
+                              </div>
+                              <div class="form-group">
+                                <label for="usr">(c)</label>
+                                <input type="text" class="form-control" id="q1-o3" name="question1option3">
+                              </div>
+                              <div class="form-group">
+                                <label for="usr">(d)</label>
+                                <input type="text" class="form-control" id="q1-o4" name="question1option4">
+                              </div>
+                              <div style="display:flex;justify-content:center;align-items:center;">
+                                <div>
+                                <div class="form-group">
+                                  <label for="ex1">Correct Answer</label>
+                                  <input class="form-control" id="ex1" type="text" name="question1answer">
+                                </div>
+                                </div>
+                              </div>
+                              </div>
+                            <br>
+                            <div class="form-group">
+                              <label for="comment">Question 2:</label>
+                              <input type="text" class="form-control" id="q2" name="question2">
+                              <br>
+                                <div class="form-group">
+                                  <label for="usr">(a)</label>
+                                  <input type="text" class="form-control" id="q2-o1" name="question2option1">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(b)</label>
+                                  <input type="text" class="form-control" id="q2-o2" name="question2option2">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(c)</label>
+                                  <input type="text" class="form-control" id="q2-o3" name="question2option3">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(d)</label>
+                                  <input type="text" class="form-control" id="q2-o4" name="question2option4">
+                                </div>
+                                <div style="display:flex;justify-content:center;align-items:center;">
+                                  <div>
+                                  <div class="form-group">
+                                    <label for="ex1">Correct Answer</label>
+                                    <input class="form-control" id="ex2" type="text" name="question2answer">
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <br>
+                            <div class="form-group">
+                              <label for="comment">Question 3:</label>
+                              <input type="text" class="form-control" id="q3" name="question3">
+                              <br>
+                                <div class="form-group">
+                                  <label for="usr">(a)</label>
+                                  <input type="text" class="form-control" id="q3-o1" name="question3option1">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(b)</label>
+                                  <input type="text" class="form-control" id="q3-o2" name="question3option2">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(c)</label>
+                                  <input type="text" class="form-control" id="q3-o3" name="question3option3">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(d)</label>
+                                  <input type="text" class="form-control" id="q3-o4" name="question3option4">
+                                </div>
+                                <div style="display:flex;justify-content:center;align-items:center;">
+                                  <div>
+                                  <div class="form-group">
+                                    <label for="ex1">Correct Answer</label>
+                                    <input class="form-control" id="ex3" type="text" name="question3answer">
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <br>
+                            <div class="form-group">
+                              <label for="comment">Question 4:</label>
+                              <input type="text" class="form-control" id="q4" name="question4">
+                              <br>
+                                <div class="form-group">
+                                  <label for="usr">(a)</label>
+                                  <input type="text" class="form-control" id="q4-o1" name="question4option1">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(b)</label>
+                                  <input type="text" class="form-control" id="q4-o2" name="question4option2">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(c)</label>
+                                  <input type="text" class="form-control" id="q4-o3" name="question4option3">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(d)</label>
+                                  <input type="text" class="form-control" id="q4-o4" name="question4option4">
+                                </div>
+                                <div style="display:flex;justify-content:center;align-items:center;">
+                                  <div>
+                                  <div class="form-group">
+                                    <label for="ex1">Correct Answer</label>
+                                    <input class="form-control" id="ex4" type="text" name="question4answer">
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <br>
+                            <div class="form-group">
+                              <label for="comment">Question 5:</label>
+                              <input type="text" class="form-control" id="q5" name="question5">
+                              <br>
+                                <div class="form-group">
+                                  <label for="usr">(a)</label>
+                                  <input type="text" class="form-control" id="q5-o1" name="question5option1">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(b)</label>
+                                  <input type="text" class="form-control" id="q5-o2" name="question5option2">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(c)</label>
+                                  <input type="text" class="form-control" id="q5-o3" name="question5option3">
+                                </div>
+                                <div class="form-group">
+                                  <label for="usr">(d)</label>
+                                  <input type="text" class="form-control" id="q5-o4" name="question5option4">
+                                </div>
+                                <div style="display:flex;justify-content:center;align-items:center;">
+                                  <div>
+                                  <div class="form-group">
+                                    <label for="ex1">Correct Answer</label>
+                                    <input class="form-control" id="ex5" type="text" name="question5answer">
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <br>
+                        	<br><br>
+                        	<button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head></head>
+    <body>
+    	<h2>Welcome {{ usertype }}</h2>
+    	<form action="action_page" method="post">
+        {% csrf_token %}
+  			Firstname:
+  			<br><input type="text" name="firstName" value="default" required><br>
+    		Lastname:
+    		<br><input type="text" name="lastName" value="default"><br>
+    		Username:
+    		<br><input type="text" name="username" value="default" required><br>
+    		Password:
+    		<br><input type="password" name="password" required><br>
+    		<input type="submit" value="Signup">
+    	</form>
+    </body>
+</html>

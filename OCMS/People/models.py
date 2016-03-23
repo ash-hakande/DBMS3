@@ -26,6 +26,7 @@ class Faculty(models.Model):
 
 class Parent(models.Model):
 	parentID = models.AutoField(primary_key = True)
+	child = models.ForeignKey(Student, on_delete = models.CASCADE, null = True)
 	firstName = models.CharField('First Name', max_length = 100)
 	lastName = models.CharField('Last Name', max_length = 100)
 	username = models.CharField('Login Username', max_length = 25)

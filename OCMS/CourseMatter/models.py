@@ -8,12 +8,13 @@ from People.models import Student
 
 class Question(models.Model):
 	questionID = models.AutoField(primary_key = True)
-	questionText = models.CharField('Question', max_length = 100)
-	choice1 = models.CharField('Choice 1', max_length = 50)
-	choice2 = models.CharField('Choice 2', max_length = 50)
-	choice3 = models.CharField('Choice 3', max_length = 50)
-	choice4 = models.CharField('Choice 4', max_length = 50)
-	questionMarks = models.IntegerField('Question Marks')
+	questionText = models.CharField('Question', max_length = 100, null = True)
+	choice1 = models.CharField('Choice 1', max_length = 50, null = True)
+	choice2 = models.CharField('Choice 2', max_length = 50, null = True)
+	choice3 = models.CharField('Choice 3', max_length = 50, null = True)
+	choice4 = models.CharField('Choice 4', max_length = 50, null = True)
+	# questionMarks = models.IntegerField('Question Marks')
+	correct = models.CharField('Correct Answer', max_length= 1, null = True)
 
 class Test(models.Model):
 	testID = models.AutoField(primary_key = True)
@@ -29,7 +30,7 @@ class Lecture(models.Model):
 	lectureID = models.AutoField(primary_key = True)
 	lectureTitle = models.CharField('Title', max_length = 50)
 	lectureText = models.CharField('Lecture', max_length = 500)
-	lectureWeek = models.IntegerField('Week No.')
+	lectureWeek = models.IntegerField('Week No.', null = True)
 
 class CourseContent(models.Model):
 	courseID = models.ForeignKey(Course)

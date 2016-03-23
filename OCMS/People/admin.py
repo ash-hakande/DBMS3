@@ -12,5 +12,9 @@ class FacultySite(admin.AdminSite):
 studentSite = StudentSite(name = 'student site')
 facultySite = FacultySite(name = 'faculty site')
 
+admin.site.register(Admin)
 admin.site.register(Faculty)
+admin.site.register(Student)
+admin.site.register(Parent)
+
 

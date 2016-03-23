@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    </head>
+	<body>
+		<h2>Listing course information for <!--Enter name--></h2>
+		<ul style="list-style-type:disc">
+			<li>Course ID:<!--Get from views--></li>
+			<li>Course Name:<!--Get from views--></li>
+			<li>Course Field:<!--Get from views--></li>
+			<li>Course Faculties:<!--Get from views--></li>
+			<li>Course Prerequisites:<!--Get from views--></li>
+		</ul>
+		<h2>Give new information below:</h2>
+		<form action="url.py"><!--get from views-->
+			Course ID: <input type="text" value="default" name="ID"><!--get defaults from view--><br>
+			Course Name: <input type="text" value="default" name="ID"><!--get defaults from view--><br>
+			Course Field: <input type="text" value="default" name="ID"><!--get defaults from view--><br>
+			Course Faculties: <input type="text" value="default" name="ID"><!--get defaults from view--><br>
+			Course Prerequisites: <input type="text" value="default" name="ID"><!--get defaults from view--><br><br>
+			<input type="submit">
+		</form>
+	</body>
+</html>

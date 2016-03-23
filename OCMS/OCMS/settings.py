@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -80,12 +79,12 @@ WSGI_APPLICATION = 'OCMS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'OCMS',
-        'USER': 'ash',
-        'PASSWORD' : 'password',
-        'HOST' : 'localhost' ,
-        'PORT' : '5432' ,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'USER': 'ash',
+        # 'PASSWORD' : 'password',
+        # 'HOST' : 'localhost' ,
+        # 'PORT' : '5432' ,
     }
 }
 
@@ -126,4 +125,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/People/templates/student_update/'
+
+STATICFILES_DIRS = [
+    BASE_DIR + '/People/templates/student_update/',
+]
